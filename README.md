@@ -83,20 +83,12 @@ Appliquer les changements pour la base de données
 python manage.py makemigrations
 ```
 
-<div style="color: darkorange; margin-bottom: 0.1em;">
-Lancer le shell Django
-</div>
-
-```bash
-.venv\Scripts\activate
-python manage.py shell
-```
-
 <div style="color: forestgreen; margin-bottom: 0.1em;">
 Commandes :
 </div>
 
 ```bash
+python manage.py shell
 >>> from django.core.management.utils import get_random_secret_key
 >>> get_random_secret_key()
 
@@ -116,4 +108,32 @@ Enter password: rootMysql@2210
 mysql> show databases;
 mysql> use restaurant_db;
 mysql> show tables;
+```
+
+<div style="color: darkorange; margin-bottom: 0.1em;">
+Jouons avec l'API Django
+</div>
+
+```bash
+python manage.py shell
+>>> from restaurant.models import Meal
+>>> Meal.objects.create(name="Meal One", description="This is our first meal", price="20")
+>>> mael = Meal.objects.create(name="Meal Two", description="This is our second meal", price="24")
+>>> mael.save()
+>>> Meal.objects.all()
+>>> repas1 = Meal.objects.get(pk=1)
+>>> repas1.available = True
+>>> repas1.save()
+```
+
+<div style="color: darkorange; margin-bottom: 0.1em;">
+Création de SuperUser de Django Administration
+</div>
+
+```bash
+python manage.py createsuperuser
+Username: ghostyrex
+Email: ghostyrex@gmail.com
+Password: Superuser2
+Password(again): Superuser2
 ```
