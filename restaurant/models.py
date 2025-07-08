@@ -15,5 +15,8 @@ class Meal(models.Model):
 
     # Available store the boolean true or false depending on whether the meal is available
     # online
-    available = models.BooleanField('Available', default=False)
+    available = models.BooleanField('Online Availability', default=False)
+
+    def __str__(self):
+        return f"{self.description}"
 
