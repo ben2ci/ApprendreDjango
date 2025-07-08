@@ -20,7 +20,7 @@ Récupérer le dépôt distant
 </div>
 
 ```bash
-git clone https://github.com/votre-utilisateur/apprendredjango.git
+git clone https://github.com/ben2ci/ApprendreDjango.git
 cd ApprendreDjango
 ```
 
@@ -88,6 +88,7 @@ Lancer le shell Django
 </div>
 
 ```bash
+.venv\Scripts\activate
 python manage.py shell
 ```
 
@@ -111,7 +112,7 @@ Commande après l'installation de MySQL
 ```bash
 (.venv) mysql -u ghostyrex -p
 Enter password: rootMysql@2210
-
+(mysql> create database restaurant_db;)
 mysql> show databases;
 mysql> use restaurant_db;
 mysql> show tables;
